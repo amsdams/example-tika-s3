@@ -96,7 +96,6 @@ public class TikaDetectorTest {
 
 		Resource resource = resourcePatternResolver.getResource(input);
 
-		client.createBucket(BUCKET_NAME);
 		client.putObject(BUCKET_NAME, KEY, resource.getFile());
 		S3Object s3Object = client.getObject(BUCKET_NAME, KEY);
 		MediaType mediaType = this.getMediaType(s3Object.getObjectContent());
